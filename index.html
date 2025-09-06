@@ -1,0 +1,1725 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sri Masaniamman Hollow Blocks - Quality Building Materials</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Navigation */
+        nav {
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(10px);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            padding: 1rem 0;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .logo-image {
+            width: 60px;
+            height: 60px;
+            background: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNTAwIiBoZWlnaHQ9IjUwMCIgdmlld0JveD0iMCAwIDUwMCA1MDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSI1MDAiIGhlaWdodD0iNTAwIiBmaWxsPSIjRjVGNUY1Ii8+CjxwYXRoIGQ9Ik0xNTAgMzUwVjIwMEgzNTBWMzUwSDM3NVYxNzVIMTI1VjM1MEgxNTBaIiBmaWxsPSIjMzQ2N0E0Ii8+CjxwYXRoIGQ9Ik0yMDAgMzAwVjI1MEgzMDBWMzAwSDIwMFoiIGZpbGw9IiM5OTk5OTkiLz4KPHA+PC9zdmc+') no-repeat center;
+            background-size: contain;
+        }
+
+        .logo-text {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #34679F;
+            text-decoration: none;
+            line-height: 1.2;
+        }
+
+        .logo-text .hollow-blocks {
+            font-size: 0.9rem;
+            color: #888;
+            display: block;
+            font-weight: 500;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-menu a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            position: relative;
+        }
+
+        .nav-menu a:hover,
+        .nav-menu a.active {
+            color: #34679F;
+        }
+
+        .nav-menu a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 50%;
+            background: #34679F;
+            transition: all 0.3s ease;
+        }
+
+        .nav-menu a:hover::after,
+        .nav-menu a.active::after {
+            width: 100%;
+            left: 0;
+        }
+
+        .mobile-menu {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: #333;
+            cursor: pointer;
+        }
+
+        /* Page Sections */
+        .page {
+            display: none;
+            min-height: 100vh;
+            padding-top: 80px;
+        }
+
+        .page.active {
+            display: block;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e8ecf0 100%);
+            min-height: 90vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -10%;
+            width: 40%;
+            height: 200%;
+            background: linear-gradient(45deg, rgba(52, 103, 159, 0.1), rgba(136, 136, 136, 0.1));
+            border-radius: 50%;
+            z-index: 1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 600px;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            color: #34679F;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        .hero .tagline {
+            font-size: 1.3rem;
+            color: #666;
+            margin-bottom: 2rem;
+            font-weight: 300;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(135deg, #34679F, #4A7BB7);
+            color: white;
+            padding: 15px 40px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(52, 103, 159, 0.3);
+            border: none;
+            cursor: pointer;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(52, 103, 159, 0.4);
+        }
+
+        /* Features Section */
+        .features {
+            padding: 80px 0;
+            background: #fff;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            color: #34679F;
+            margin-bottom: 3rem;
+            font-weight: 700;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .feature-card {
+            background: #fff;
+            padding: 2rem;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            border: 1px solid #f0f0f0;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 60px rgba(52, 103, 159, 0.15);
+            border-color: #34679F;
+        }
+
+        .feature-icon {
+            font-size: 3rem;
+            color: #34679F;
+            margin-bottom: 1rem;
+        }
+
+        .feature-card h3 {
+            font-size: 1.5rem;
+            color: #333;
+            margin-bottom: 1rem;
+        }
+
+        .feature-card p {
+            color: #666;
+        }
+
+        /* Products Grid */
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .product-card {
+            background: #fff;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            border: 1px solid #f0f0f0;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 50px rgba(52, 103, 159, 0.15);
+            border-color: #34679F;
+        }
+
+        .product-image {
+            height: 200px;
+            background: linear-gradient(45deg, #e8ecf0, #f8f9fa);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            color: #888;
+        }
+
+        .product-content {
+            padding: 1.5rem;
+        }
+
+        .product-card h3 {
+            font-size: 1.3rem;
+            color: #34679F;
+            margin-bottom: 0.5rem;
+        }
+
+        .product-card p {
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        /* Contact Section */
+        .contact-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .contact-card {
+            background: #fff;
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            border: 1px solid #f0f0f0;
+        }
+
+        .contact-card:hover {
+            transform: translateY(-5px);
+            border-color: #34679F;
+        }
+
+        .contact-card i {
+            font-size: 2.5rem;
+            color: #34679F;
+            margin-bottom: 1rem;
+        }
+
+        .contact-card h3 {
+            color: #333;
+            margin-bottom: 1rem;
+        }
+
+        .contact-card p {
+            color: #666;
+        }
+
+        .contact-form {
+            background: #fff;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            max-width: 600px;
+            margin: 0 auto;
+            border: 1px solid #f0f0f0;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: #333;
+            font-weight: 500;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #e9ecef;
+            border-radius: 10px;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #34679F;
+            box-shadow: 0 0 0 3px rgba(52, 103, 159, 0.1);
+        }
+
+        /* WhatsApp Button */
+        .whatsapp-btn {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: linear-gradient(135deg, #1a1a2e, #16213e);
+            color: white;
+            padding: 15px;
+            border-radius: 50px;
+            font-size: 1.5rem;
+            text-decoration: none;
+            box-shadow: 0 10px 30px rgba(26, 26, 46, 0.4);
+            z-index: 1000;
+            transition: all 0.3s ease;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .whatsapp-btn:hover {
+            transform: scale(1.1);
+            box-shadow: 0 15px 40px rgba(26, 26, 46, 0.6);
+            background: linear-gradient(135deg, #16213e, #0f3460);
+            border-color: rgba(255, 255, 255, 0.4);
+        }
+
+        /* About Section */
+        .about-content {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .about-hero {
+            text-align: center;
+            margin-bottom: 4rem;
+            padding: 3rem 0;
+            background: linear-gradient(135deg, rgba(52, 103, 159, 0.05), rgba(74, 123, 183, 0.05));
+            border-radius: 20px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .about-hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 40%;
+            height: 200%;
+            background: linear-gradient(45deg, rgba(52, 103, 159, 0.1), rgba(74, 123, 183, 0.1));
+            border-radius: 50%;
+            z-index: 1;
+        }
+
+        .about-hero-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .about-content h2 {
+            font-size: 3rem;
+            background: linear-gradient(135deg, #34679F, #4A7BB7);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 1.5rem;
+            font-weight: 700;
+        }
+
+        .about-subtitle {
+            font-size: 1.3rem;
+            color: #666;
+            margin-bottom: 2rem;
+            font-weight: 300;
+            text-align: center;
+        }
+
+        .about-content p {
+            font-size: 1.1rem;
+            color: #555;
+            margin-bottom: 2rem;
+            line-height: 1.8;
+            text-align: center;
+        }
+
+        .about-content h3 {
+            color: #34679F;
+            margin: 3rem 0 1.5rem;
+            font-size: 1.8rem;
+            font-weight: 600;
+            position: relative;
+            text-align: center;
+        }
+
+        .about-content h3::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            width: 60px;
+            height: 4px;
+            background: linear-gradient(135deg, #34679F, #4A7BB7);
+            border-radius: 2px;
+            margin-top: 40px;
+        }
+
+        .about-content h4 {
+            color: #34679F;
+            font-size: 1.3rem;
+            margin: 1.5rem 0 1rem;
+            font-weight: 600;
+        }
+
+        .about-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+
+        .about-stat-card {
+            background: linear-gradient(135deg, #fff, #f8f9fa);
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            border: 1px solid #e9ecef;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .about-stat-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #34679F, #4A7BB7);
+        }
+
+        .about-stat-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 50px rgba(52, 103, 159, 0.15);
+        }
+
+        .about-stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #34679F;
+            margin-bottom: 0.5rem;
+        }
+
+        .about-stat-label {
+            font-size: 1rem;
+            color: #666;
+            font-weight: 500;
+        }
+
+        .about-mission {
+            background: linear-gradient(135deg, #f8f9fa, #e8ecf0);
+            padding: 3rem;
+            border-radius: 20px;
+            margin: 3rem 0;
+            border-left: 5px solid #34679F;
+            position: relative;
+        }
+
+        .about-mission::before {
+            content: '💡';
+            position: absolute;
+            top: 2rem;
+            right: 2rem;
+            font-size: 2rem;
+            opacity: 0.3;
+        }
+
+        .about-mission h3 {
+            color: #34679F;
+            margin-bottom: 1.5rem;
+            font-size: 1.8rem;
+        }
+
+        .about-mission p {
+            font-size: 1.1rem;
+            color: #555;
+            line-height: 1.8;
+            margin: 0;
+        }
+
+        .about-services {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+
+        .about-service-card {
+            background: #fff;
+            padding: 2.5rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            border: 1px solid #e9ecef;
+            transition: all 0.3s ease;
+            text-align: left;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .about-service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #34679F, #4A7BB7);
+        }
+
+        .about-service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 50px rgba(52, 103, 159, 0.15);
+        }
+
+        .about-service-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            display: block;
+        }
+
+        .about-service-card h4 {
+            color: #34679F;
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+        .about-service-card p {
+            color: #666;
+            font-size: 1rem;
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        .about-timeline {
+            margin: 4rem 0;
+            position: relative;
+        }
+
+        .about-timeline::before {
+            content: '';
+            position: absolute;
+            left: 30px;
+            top: 0;
+            bottom: 0;
+            width: 3px;
+            background: linear-gradient(180deg, #34679F, #4A7BB7);
+            border-radius: 2px;
+        }
+
+        .about-timeline-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 3rem;
+            position: relative;
+        }
+
+        .about-timeline-dot {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #34679F, #4A7BB7);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-right: 2rem;
+            position: relative;
+            z-index: 2;
+            box-shadow: 0 5px 15px rgba(52, 103, 159, 0.3);
+        }
+
+        .about-timeline-content {
+            flex: 1;
+            background: #fff;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            border: 1px solid #e9ecef;
+        }
+
+        .about-timeline-content h4 {
+            color: #34679F;
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+        .about-timeline-content p {
+            color: #666;
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        /* Footer */
+        footer {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+            color: white;
+            padding: 80px 0 30px;
+            margin-top: 80px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #34679F, #4A7BB7, #25d366, #34679F);
+        }
+
+        .footer-cta {
+            background: linear-gradient(135deg, rgba(52, 103, 159, 0.1), rgba(74, 123, 183, 0.1));
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 40px;
+            text-align: center;
+            margin-bottom: 60px;
+            backdrop-filter: blur(10px);
+        }
+
+        .footer-cta h3 {
+            font-size: 2.2rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(45deg, #fff, #4A7BB7);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .footer-cta p {
+            font-size: 1.1rem;
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 2rem;
+        }
+
+        .footer-cta-button {
+            display: inline-block;
+            background: linear-gradient(135deg, #25d366, #128c7e);
+            color: white;
+            padding: 15px 35px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(37, 211, 102, 0.3);
+            border: none;
+            cursor: pointer;
+        }
+
+        .footer-cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(37, 211, 102, 0.4);
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-section {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 30px;
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .footer-section:hover {
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.08);
+        }
+
+        .footer-section h3 {
+            margin-bottom: 1.5rem;
+            color: white;
+            font-size: 1.4rem;
+            font-weight: 600;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .footer-section h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 40px;
+            height: 3px;
+            background: linear-gradient(90deg, #34679F, #4A7BB7);
+            border-radius: 2px;
+        }
+
+        .footer-section p,
+        .footer-section a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            margin-bottom: 0.8rem;
+            display: block;
+            transition: all 0.3s ease;
+            line-height: 1.6;
+        }
+
+        .footer-section a:hover {
+            color: #4A7BB7;
+            transform: translateX(5px);
+        }
+
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-logo-image {
+            width: 70px;
+            height: 70px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            transition: all 0.3s ease;
+            overflow: hidden;
+        }
+
+        .footer-logo-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            border-radius: 10px;
+        }
+
+        .footer-logo-image:hover {
+            transform: scale(1.05);
+            border-color: #4A7BB7;
+        }
+
+        .footer-logo-text {
+            font-size: 1.6rem;
+            font-weight: bold;
+            color: white;
+            line-height: 1.3;
+        }
+
+        .footer-logo-text small {
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.7);
+            font-weight: 500;
+        }
+
+        .footer-contact-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 1rem;
+            padding: 12px 15px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+            transition: all 0.3s ease;
+            flex: 1;
+            min-width: 200px;
+        }
+
+        .footer-contact-item:hover {
+            background: rgba(255, 255, 255, 0.1);
+            transform: translateX(5px);
+        }
+
+        .footer-contact-item i {
+            font-size: 1.2rem;
+            color: #4A7BB7;
+            margin-top: 2px;
+        }
+
+        .footer-contact-item strong {
+            color: white;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .footer-contact-item a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-contact-item a:hover {
+            color: #4A7BB7;
+        }
+
+        .footer-contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 3rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 0.95rem;
+            background: rgba(0, 0, 0, 0.2);
+            margin: 0 -20px -30px -20px;
+            padding: 2rem 20px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .mobile-menu {
+                display: block;
+            }
+
+            .nav-menu {
+                display: none;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero .tagline {
+                font-size: 1.1rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .whatsapp-btn {
+                bottom: 20px;
+                right: 20px;
+            }
+
+            .logo-text {
+                font-size: 1.2rem;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+                gap: 2rem;
+            }
+
+            .footer-cta {
+                padding: 30px 20px;
+                margin-bottom: 40px;
+            }
+
+            .footer-cta h3 {
+                font-size: 1.8rem;
+            }
+
+            .footer-section {
+                padding: 25px 20px;
+            }
+
+            .footer-logo {
+                justify-content: center;
+                text-align: center;
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .footer-logo-image {
+                width: 60px;
+                height: 60px;
+            }
+
+            .footer-logo-image img {
+                width: 100%;
+                height: 100%;
+                object-fit: contain;
+            }
+
+            .footer-contact-item {
+                padding: 12px;
+            }
+
+            .footer-contact-grid {
+                grid-template-columns: 1fr;
+                gap: 0.8rem;
+            }
+
+            .about-content h2 {
+                font-size: 2.2rem;
+            }
+
+            .about-subtitle {
+                font-size: 1.1rem;
+            }
+
+            .about-stats {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1rem;
+            }
+
+            .about-stat-card {
+                padding: 1.5rem;
+            }
+
+            .about-stat-number {
+                font-size: 2rem;
+            }
+
+            .about-mission {
+                padding: 2rem;
+            }
+
+            .about-services {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .about-service-card {
+                padding: 2rem;
+            }
+
+            .about-timeline::before {
+                left: 20px;
+            }
+
+            .about-timeline-dot {
+                width: 40px;
+                height: 40px;
+                font-size: 1rem;
+                margin-right: 1rem;
+            }
+
+            .about-timeline-content {
+                padding: 1.5rem;
+            }
+
+            .logo-image {
+                width: 60px;
+                height: 60px;
+            }
+
+            .logo-image img {
+                width: 60px !important;
+                height: 60px !important;
+            }
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in {
+            animation: fadeInUp 0.6s ease forwards;
+        }
+
+        /* General page styling */
+        .page-content {
+            padding: 40px 0;
+            background: #f8f9fa;
+            min-height: calc(100vh - 80px);
+        }
+
+        .page-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .page-header h1 {
+            font-size: 2.5rem;
+            color: #34679F;
+            margin-bottom: 1rem;
+        }
+
+        .page-header p {
+            font-size: 1.1rem;
+            color: #666;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Product categories */
+        .category-tabs {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .category-tab {
+            background: #fff;
+            color: #666;
+            padding: 10px 20px;
+            border: 2px solid #e9ecef;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+
+        .category-tab.active,
+        .category-tab:hover {
+            background: #34679F;
+            color: white;
+            border-color: #34679F;
+        }
+
+        /* Stats section for home page */
+        .stats-section {
+            background: linear-gradient(135deg, #34679F, #4A7BB7);
+            color: white;
+            padding: 60px 0;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            text-align: center;
+        }
+
+        .stat-item h3 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            color: white;
+        }
+
+        .stat-item p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="container">
+            <div class="nav-container">
+                <div class="logo-container">
+                    <div class="logo-image">
+                        <img src="newlogo.jpeg" alt="Logo" style="width:60px; height:60px;">
+                    </div>
+                    <a href="#" class="logo-text">
+                        Sri Masaniamman
+                        <span class="hollow-blocks">HOLLOW BLOCKS</span>
+                    </a>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="#" class="nav-link active" data-page="home">Home</a></li>
+                    <li><a href="#" class="nav-link" data-page="products">Products</a></li>
+                    <li><a href="#" class="nav-link" data-page="about">About Us</a></li>
+                    <li><a href="#" class="nav-link" data-page="contact">Contact</a></li>
+                </ul>
+                <button class="mobile-menu">☰</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Home Page -->
+    <div id="home" class="page active">
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container">
+                <div class="hero-content fade-in">
+                    <h1>Sri Masaniamman<br>Hollow Blocks</h1>
+                    <p class="tagline">Quality Building Materials You Can Trust</p>
+                    <a href="#" class="cta-button" onclick="showPage('contact')">Get a Quote</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Stats Section -->
+        <section class="stats-section">
+            <div class="container">
+                <div class="stats-grid">
+                    <div class="stat-item">
+                        <h3>12+</h3>
+                        <p>Years Experience</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3>700+</h3>
+                        <p>Projects Completed</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3>100%</h3>
+                        <p>Quality Assured</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3>24/7</h3>
+                        <p>Customer Support</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section class="features">
+            <div class="container">
+                <h2 class="section-title">Why Choose Us?</h2>
+                <div class="features-grid">
+                    <div class="feature-card fade-in">
+                        <div class="feature-icon">🏗️</div>
+                        <h3>Quality Materials</h3>
+                        <p>Premium hollow blocks and cement sourced from trusted manufacturers with strict quality control.</p>
+                    </div>
+                    <div class="feature-card fade-in">
+                        <div class="feature-icon">🚚</div>
+                        <h3>Reliable Supply</h3>
+                        <p>Consistent inventory and on-time delivery to keep your construction projects on schedule.</p>
+                    </div>
+                    <div class="feature-card fade-in">
+                        <div class="feature-icon">💰</div>
+                        <h3>Competitive Prices</h3>
+                        <p>Best prices in the market with flexible payment options for contractors and builders.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Featured Products -->
+        <section class="features" style="background: #f8f9fa;">
+            <div class="container">
+                <h2 class="section-title">Our Featured Products</h2>
+                <div class="products-grid">
+                    <div class="product-card">
+                        <div class="product-image">🧱</div>
+                        <div class="product-content">
+                            <h3>Hollow Blocks</h3>
+                            <p>High-quality concrete hollow blocks in various sizes for all construction needs.</p>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <div class="product-image">🏭</div>
+                        <div class="product-content">
+                            <h3>Cement Supply</h3>
+                            <p>Premium cement from leading brands with consistent quality and strength.</p>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <div class="product-image">🔨</div>
+                        <div class="product-content">
+                            <h3>Building Materials</h3>
+                            <p>Complete range of construction materials for residential and commercial projects.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Products Page -->
+    <div id="products" class="page">
+        <div class="page-content">
+            <div class="container">
+                <div class="page-header">
+                    <h1>Our Products</h1>
+                    <p>Comprehensive range of building materials for all your construction needs</p>
+                </div>
+
+                <div class="category-tabs">
+                    <button class="category-tab active" onclick="filterProducts('all')">All Products</button>
+                    <button class="category-tab" onclick="filterProducts('blocks')">Hollow Blocks</button>
+                    <button class="category-tab" onclick="filterProducts('cement')">Cement</button>
+                    <button class="category-tab" onclick="filterProducts('materials')">Other Materials</button>
+                </div>
+
+                <div class="products-grid">
+                    <div class="product-card" data-category="blocks">
+                        <div class="product-image">🧱</div>
+                        <div class="product-content">
+                            <h3>Standard Hollow Blocks</h3>
+                            <p><strong>Size:</strong> 400x200x150mm<br>
+                            <strong>Strength:</strong> M5 Grade<br>
+                            Perfect for load-bearing walls and partitions.</p>
+                        </div>
+                    </div>
+                    <div class="product-card" data-category="blocks">
+                        <div class="product-image">🧱</div>
+                        <div class="product-content">
+                            <h3>Large Hollow Blocks</h3>
+                            <p><strong>Size:</strong> 400x200x200mm<br>
+                            <strong>Strength:</strong> M7.5 Grade<br>
+                            Heavy-duty blocks for commercial construction.</p>
+                        </div>
+                    </div>
+                    <div class="product-card" data-category="cement">
+                        <div class="product-image">🏭</div>
+                        <div class="product-content">
+                            <h3>OPC 53 Grade Cement</h3>
+                            <p><strong>Brand:</strong> Premium Quality<br>
+                            <strong>Packaging:</strong> 50kg bags<br>
+                            High strength cement for all construction needs.</p>
+                        </div>
+                    </div>
+                    <div class="product-card" data-category="cement">
+                        <div class="product-image">🏭</div>
+                        <div class="product-content">
+                            <h3>PPC Cement</h3>
+                            <p><strong>Grade:</strong> 43 Grade<br>
+                            <strong>Packaging:</strong> 50kg bags<br>
+                            Portland Pozzolana Cement for general construction.</p>
+                        </div>
+                    </div>
+                    <div class="product-card" data-category="materials">
+                        <div class="product-image">🔨</div>
+                        <div class="product-content">
+                            <h3>Construction Sand</h3>
+                            <p><strong>Type:</strong> River sand & M-sand<br>
+                            <strong>Quality:</strong> Washed & graded<br>
+                            Premium quality sand for concrete and plastering.</p>
+                        </div>
+                    </div>
+                    <div class="product-card" data-category="materials">
+                        <div class="product-image">🪨</div>
+                        <div class="product-content">
+                            <h3>Aggregates</h3>
+                            <p><strong>Sizes:</strong> 6mm, 12mm, 20mm<br>
+                            <strong>Quality:</strong> Crushed stone<br>
+                            High-quality aggregates for concrete mixing.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- About Page -->
+    <div id="about" class="page">
+        <div class="page-content">
+            <div class="container">
+                <div class="about-content">
+                    <!-- Hero Section -->
+                    <div class="about-hero">
+                        <div class="about-hero-content">
+                            <h2>About Sri Masaniamman Hollow Blocks</h2>
+                            <p class="about-subtitle">Building Excellence, One Block at a Time</p>
+                        </div>
+                    </div>
+
+                    <!-- Company Stats -->
+                    <div class="about-stats">
+                        <div class="about-stat-card">
+                            <div class="about-stat-number">12+</div>
+                            <div class="about-stat-label">Years of Excellence</div>
+                        </div>
+                        <div class="about-stat-card">
+                            <div class="about-stat-number">700+</div>
+                            <div class="about-stat-label">Projects Completed</div>
+                        </div>
+                        <div class="about-stat-card">
+                            <div class="about-stat-number">100%</div>
+                            <div class="about-stat-label">Quality Assured</div>
+                        </div>
+                        <div class="about-stat-card">
+                            <div class="about-stat-number">24/7</div>
+                            <div class="about-stat-label">Customer Support</div>
+                        </div>
+                    </div>
+
+                    <!-- Company Story -->
+                    <p>With years of experience in the construction industry, Sri Masaniamman Hollow Blocks has established itself as a trusted name in building materials supply. We specialize in providing high-quality hollow blocks, cement, and other essential construction materials to builders, contractors, and homeowners across the region.</p>
+                    
+                    <p>Our commitment to quality begins with careful selection of raw materials and continues through our rigorous quality control processes. We understand that the strength and durability of any structure depends on the quality of materials used, which is why we never compromise on standards.</p>
+
+                    <!-- Mission Statement -->
+                    <div class="about-mission">
+                        <h3>Our Mission</h3>
+                        <p>To supply reliable, high-quality building materials for every project, from small residential constructions to large commercial developments. We aim to build lasting relationships with our customers through consistent quality, competitive pricing, and exceptional service.</p>
+                    </div>
+
+                    <!-- Services We Provide -->
+                    <h3>What We Serve</h3>
+                    <div class="about-services">
+                        <div class="about-service-card">
+                            <span class="about-service-icon">🏗️</span>
+                            <h4>Construction Companies</h4>
+                            <p>Bulk supply for large projects with competitive pricing and reliable delivery schedules.</p>
+                        </div>
+                        <div class="about-service-card">
+                            <span class="about-service-icon">👷</span>
+                            <h4>Individual Contractors</h4>
+                            <p>Flexible quantities and terms to meet your specific project requirements.</p>
+                        </div>
+                        <div class="about-service-card">
+                            <span class="about-service-icon">🏠</span>
+                            <h4>Home Builders</h4>
+                            <p>Quality materials for dream homes with personalized service and support.</p>
+                        </div>
+                        <div class="about-service-card">
+                            <span class="about-service-icon">🏪</span>
+                            <h4>Retailers</h4>
+                            <p>Wholesale pricing for resellers with consistent supply and quality assurance.</p>
+                        </div>
+                    </div>
+
+                    <!-- Company Timeline -->
+                    <h3>Our Journey</h3>
+                    <div class="about-timeline">
+                        <div class="about-timeline-item">
+                            <div class="about-timeline-dot">2014</div>
+                            <div class="about-timeline-content">
+                                <h4>Company Founded</h4>
+                                <p>Started with a vision to provide quality building materials to the construction industry.</p>
+                            </div>
+                        </div>
+                        <div class="about-timeline-item">
+                            <div class="about-timeline-dot">2017</div>
+                            <div class="about-timeline-content">
+                                <h4>Expansion Phase</h4>
+                                <p>Expanded our product range and established partnerships with leading manufacturers.</p>
+                            </div>
+                        </div>
+                        <div class="about-timeline-item">
+                            <div class="about-timeline-dot">2020</div>
+                            <div class="about-timeline-content">
+                                <h4>Digital Transformation</h4>
+                                <p>Embraced technology to improve customer service and streamline operations.</p>
+                            </div>
+                        </div>
+                        <div class="about-timeline-item">
+                            <div class="about-timeline-dot">2024</div>
+                            <div class="about-timeline-content">
+                                <h4>Present Day</h4>
+                                <p>Continuing to serve the community with excellence and innovation in building materials.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Contact Page -->
+    <div id="contact" class="page">
+        <div class="page-content">
+            <div class="container">
+                <div class="page-header">
+                    <h1>Contact Us</h1>
+                    <p>Get in touch for quotes, inquiries, or to place your order</p>
+                </div>
+
+                <div class="contact-info">
+                    <div class="contact-card">
+                        <i class="fas fa-phone"></i>
+                        <h3>Call Us</h3>
+                        <p><a href="tel:9342010430" style="color: #34679F; text-decoration: none;">+91 9342010430</a></p>
+                        <small>Mon-Sat: 8:00 AM - 6:00 PM</small>
+                    </div>
+                    <div class="contact-card">
+                        <i class="fas fa-envelope"></i>
+                        <h3>Email Us</h3>
+                        <p><a href="mailto:arunprasatht07@gmail.com" style="color: #34679F; text-decoration: none;">arunprasatht07@gmail.com</a></p>
+                        <small>We'll respond within 24 hours</small>
+                    </div>
+                    <div class="contact-card">
+                        <i class="fab fa-whatsapp"></i>
+                        <h3>WhatsApp</h3>
+                        <p><a href="https://wa.me/919342010430" style="color: #34679F; text-decoration: none;" target="_blank">Chat with us</a></p>
+                        <small>Quick responses guaranteed</small>
+                    </div>
+                </div>
+
+                <div class="contact-form">
+                    <h3 style="text-align: center; margin-bottom: 1.5rem; color: #34679F;">Send us a Message</h3>
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label for="name">Name *</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone Number *</label>
+                            <input type="tel" id="phone" name="phone" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email (Optional)</label>
+                            <input type="email" id="email" name="email">
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message *</label>
+                            <textarea id="message" name="message" rows="5" placeholder="Tell us about your requirements..." required></textarea>
+                        </div>
+                        <button type="submit" class="cta-button" style="width: 100%;">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- WhatsApp Float Button -->
+    <a href="https://wa.me/919342010430" class="whatsapp-btn" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-cta">
+                <h3>Ready to Start Your Project?</h3>
+                <p>Get quality building materials delivered to your site. Contact us for competitive quotes!</p>
+                <!-- <a href="https://wa.me/919342010430?text=Hi! I'm interested in your building materials. Please provide a quote for my project." class="footer-cta-button" target="_blank">Get Quote Now</a> -->
+            </div>
+            
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <div class="footer-logo-image">
+                            <img src="newlogo.jpeg" alt="Logo" style="width:70px; height:70px;">
+                        </div>
+                        <div class="footer-logo-text">Sri Masaniamman<br><small>HOLLOW BLOCKS</small></div>
+                    </div>
+                    <p>Your trusted partner for quality building materials. Serving construction companies, contractors, and home builders with premium hollow blocks, cement, and construction supplies since years.</p>
+                    
+                    <!-- <div class="footer-social">
+                        <a href="https://wa.me/919342010430" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                        <a href="tel:9342010430"><i class="fas fa-phone"></i></a>
+                        <a href="mailto:arunprasatht07@gmail.com"><i class="fas fa-envelope"></i></a>
+                    </div> -->
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <a href="#" onclick="showPage('home')">🏠 Home</a>
+                    <a href="#" onclick="showPage('products')">📦 Our Products</a>
+                    <a href="#" onclick="showPage('about')">ℹ️ About Us</a>
+                    <a href="#" onclick="showPage('contact')">📞 Contact Us</a>
+                    <a href="https://wa.me/919342010430?text=Hi! I need a quote for building materials." target="_blank">💬 Get Quote</a>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Our Products</h3>
+                    <a href="https://wa.me/919342010430?text=Hi! I'm interested in Hollow Blocks. Please provide pricing." target="_blank">🧱 Hollow Blocks</a>
+                    <a href="https://wa.me/919342010430?text=Hi! I'm interested in OPC Cement. Please provide pricing." target="_blank">🏭 OPC & PPC Cement</a>
+                    <a href="https://wa.me/919342010430?text=Hi! I'm interested in Construction Sand. Please provide pricing." target="_blank">🏖️ Construction Sand</a>
+                    <a href="https://wa.me/919342010430?text=Hi! I'm interested in Aggregates. Please provide pricing." target="_blank">🪨 Aggregates</a>
+                    <a href="https://wa.me/919342010430?text=Hi! I need building materials. Please provide full catalog." target="_blank">🔨 All Building Materials</a>
+                </div>
+                
+                <!-- <div class="footer-section">
+                    <h3>Contact Info</h3>
+                    <div class="footer-contact-grid">
+                        <div class="footer-contact-item">
+                            <i class="fas fa-phone"></i>
+                            <div>
+                                <strong>Call Us:</strong><br>
+                                <a href="tel:9342010430">+91 9342010430</a>
+                            </div>
+                        </div>
+                        <div class="footer-contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <div>
+                                <strong>Email:</strong><br>
+                                <a href="mailto:arunprasatht07@gmail.com">arunprasatht07@gmail.com</a>
+                            </div>
+                        </div>
+                        <div class="footer-contact-item">
+                            <i class="fab fa-whatsapp"></i>
+                            <div>
+                                <strong>WhatsApp:</strong><br>
+                                <a href="https://wa.me/919342010430" target="_blank">Chat with us instantly</a>
+                            </div>
+                        </div>
+                        <div class="footer-contact-item">
+                            <i class="fas fa-clock"></i>
+                            <div>
+                                <strong>Business Hours:</strong><br>
+                                Mon-Sat: 8:00 AM - 6:00 PM
+                            </div>
+                        </div>
+                    </div>
+                </div> -->
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 Sri Masaniamman Hollow Blocks. All rights reserved. | Quality Building Materials You Can Trust | Designed with ❤️ for Construction Excellence</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Navigation functionality
+        function showPage(pageId) {
+            // Hide all pages
+            document.querySelectorAll('.page').forEach(page => {
+                page.classList.remove('active');
+            });
+            
+            // Show selected page
+            document.getElementById(pageId).classList.add('active');
+            
+            // Update navigation
+            document.querySelectorAll('.nav-link').forEach(link => {
+                link.classList.remove('active');
+            });
+            document.querySelector(`[data-page="${pageId}"]`).classList.add('active');
+            
+            // Scroll to top
+            window.scrollTo(0, 0);
+        }
+
+        // Add click events to navigation links
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                const pageId = link.getAttribute('data-page');
+                showPage(pageId);
+            });
+        });
+
+        // Product filter functionality
+        function filterProducts(category) {
+            const products = document.querySelectorAll('.product-card');
+            const tabs = document.querySelectorAll('.category-tab');
+            
+            // Update active tab
+            tabs.forEach(tab => tab.classList.remove('active'));
+            event.target.classList.add('active');
+            
+            // Filter products
+            products.forEach(product => {
+                if (category === 'all' || product.getAttribute('data-category') === category) {
+                    product.style.display = 'block';
+                } else {
+                    product.style.display = 'none';
+                }
+            });
+        }
+
+        // Contact form handling
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const name = document.getElementById('name').value;
+            const phone = document.getElementById('phone').value;
+            const email = document.getElementById('email').value;
+            const message = document.getElementById('message').value;
+            
+            // Create WhatsApp message
+            const whatsappMessage = `Hello! I'm ${name}. ${message} Contact: ${phone}${email ? `, Email: ${email}` : ''}`;
+            const whatsappUrl = `https://wa.me/919342010430?text=${encodeURIComponent(whatsappMessage)}`;
+            
+            // Open WhatsApp
+            window.open(whatsappUrl, '_blank');
+            
+            // Reset form
+            this.reset();
+            alert('Thank you! Your message has been prepared for WhatsApp.');
+        });
+
+        // Smooth scrolling and animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe elements for animation
+        document.querySelectorAll('.fade-in').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(30px)';
+            el.style.transition = 'all 0.6s ease';
+            observer.observe(el);
+        });
+
+        // Mobile menu toggle
+        document.querySelector('.mobile-menu').addEventListener('click', function() {
+            const navMenu = document.querySelector('.nav-menu');
+            if (navMenu.style.display === 'flex') {
+                navMenu.style.display = 'none';
+            } else {
+                navMenu.style.display = 'flex';
+                navMenu.style.flexDirection = 'column';
+                navMenu.style.position = 'absolute';
+                navMenu.style.top = '100%';
+                navMenu.style.left = '0';
+                navMenu.style.right = '0';
+                navMenu.style.backgroundColor = 'white';
+                navMenu.style.boxShadow = '0 5px 15px rgba(0,0,0,0.1)';
+                navMenu.style.padding = '1rem';
+                navMenu.style.borderRadius = '0 0 15px 15px';
+            }
+        });
+
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', () => {
+                const navMenu = document.querySelector('.nav-menu');
+                if (window.innerWidth <= 768) {
+                    navMenu.style.display = 'none';
+                }
+            });
+        });
+
+        // Handle window resize
+        window.addEventListener('resize', function() {
+            const navMenu = document.querySelector('.nav-menu');
+            if (window.innerWidth > 768) {
+                navMenu.style.display = 'flex';
+                navMenu.style.position = 'static';
+                navMenu.style.flexDirection = 'row';
+                navMenu.style.backgroundColor = 'transparent';
+                navMenu.style.boxShadow = 'none';
+                navMenu.style.padding = '0';
+            } else {
+                navMenu.style.display = 'none';
+            }
+        });
+
+        // Add scroll effect to navigation
+        window.addEventListener('scroll', function() {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 100) {
+                nav.style.background = 'rgba(255, 255, 255, 0.98)';
+                nav.style.boxShadow = '0 2px 20px rgba(0,0,0,0.15)';
+            } else {
+                nav.style.background = 'rgba(255, 255, 255, 0.95)';
+                nav.style.boxShadow = '0 2px 20px rgba(0,0,0,0.1)';
+            }
+        });
+    </script>
+</body>
+</html>
